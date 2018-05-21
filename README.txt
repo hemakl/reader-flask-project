@@ -34,19 +34,27 @@ the flask development application server, and launch the project.
 2) 'cd' into reader-flask-project
 3) create a virtual env by running 
 	python -m venv booklist_env
-4) run the batch or shell script at booklist_env\Scripts\activate to move into
-   the virtual environment
+4) run the batch or shell script to enter virtual env
+On Windows:
+	booklist_env\Scripts\activate
+On Mac/Linux variants:
+	. booklist_env/bin/activate
 5) once your prompt changes, 
 	run 'pip install flask-restful',
    	run 'pip install passlib', 
    	run 'pip install pytest'
-6) set FLASK_ENV to development (i.e. set FLASK_ENV=development)
-7) set FLASK_APP to readerwishlist (i.e. set FLASK_APP=readerwishlist)
+6) Set environment variables:
+On Windows:
+	a) set FLASK_ENV to development (i.e. set FLASK_ENV=development)
+	b) set FLASK_APP to readerwishlist (i.e. set FLASK_APP=readerwishlist)
+On Mac/Linux Variants:
+	a) export FLASK_ENV to development (i.e. export FLASK_ENV=development)
+	b) export FLASK_APP to readerwishlist (i.e. export FLASK_APP=readerwishlist)
 8) run 'flask init-db' (creates the tables and associated columns)
 9) run 'flask run' (this starts the flask application running the project)
-10) the app is now running on 127.0.0.1:5000
+10) the app is now running on 127.0.0.1:5000 (visit this to see the API)
 
-Run Manual Test Execution Script
+Run Manual Test Execution Script - Mac/Linux Variants only
 ---------------------------------
 11) ./manual_test.sh (will execute a series of commands using the API)
 **Caveat - The Test script file consists of happy path tests only. Comprehensive tests that
@@ -60,9 +68,11 @@ Optionally to execute Integration tests
 To exit the virtual environment
 -------------------------------
 14) 'cd' back into reader-flask-project
-15) run the batch or shell script at booklist_env\Scripts\deactivate (your
-    prompt will go back to normal)
-
+15) to exit virtual env
+On Windows: 
+	booklist_env\Scripts\deactivate (your prompt will go back to normal)
+On Mac/Linux Variants: 
+	deactivate
 
 Enhancements:
 --------------
