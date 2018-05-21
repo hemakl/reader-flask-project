@@ -65,9 +65,13 @@ To exit the virtual environment
 
 
 Enhancements:
--------------
+--------------
 For the immediate future, I can think of two enchancements to make.
 1) I'm not currently using an ORM like SQLAlchemy. I would add this to further decouple
 the software between code and database. This would also allow the use of other databases
 than just SQLite3.
 2) For production deployment, I would run Flask within a Python WSGI server, such as Waitress.
+
+References:
+------------
+http://flask.pocoo.org
