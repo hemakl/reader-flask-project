@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Book Wishlist RESTful API</h2>
+  <p>Welcome to the documentation for the Book Wishlist API.</p>
+
+  <h4>RESTful Routing - URL and HTTP verb patterns</h4>
+  <table id="routing-table" class="table table-striped">
+    <thead>
+      <tr>
+        <th>URL Path</th>
+        <th>GET</th>
+        <th>POST</th>
+        <th>PUT</th>
+        <th>DELETE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>/users</td>
+        <td>list users</td>
+        <td>create new user</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>/users/&lt;user_id&gt;</td>
+        <td>get user</td>
+        <td>-</td>
+        <td>update user</td>
+        <td>delete user</td>
+      </tr>
+      <tr>
+        <td>/users/&lt;user_id&gt;/books</td>
+        <td>list books in wishlist</td>
+        <td>create book</td>
+        <td>-</td>
+        <td>delete books in wishlist</td>
+      </tr>
+      <tr>
+        <td>/users/&lt;user_id&gt;/books/&lt;book_id&gt;</td>
+        <td>get book</td>
+        <td>-</td>
+        <td>update book</td>
+        <td>delete book in wishlist</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>HTTP status codes</h4>
+  <table id="status-code-table" class="table table-striped">
+    <thead>
+      <tr>
+        <th>URL Path</th>
+        <th>GET</th>
+        <th>POST</th>
+        <th>PUT</th>
+        <th>DELETE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>/users</td>
+        <td>200 (OK, retrieved users)<br> 404 (users not found)</td>
+        <td>201 (returns the new user id)<br> 400 (bad user data)<br> 400 (user already exists)</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>/users/&lt;user_id&gt;</td>
+        <td>200 (OK, retrieved user)<br> 404 (user not found)</td>
+        <td>-</td>
+        <td>200 (user updated)<br> 400 (bad user data)<br> 401 (authentication failure)<br>404 (user not found)</td>
+        <td>204 (OK, user deleted)<br> 404 (user not found)</td>
+      </tr>
+      <tr>
+        <td>/users/&lt;user_id&gt;/books</td>
+        <td>200 (OK, retrieved books)<br> 404 (user not found)<br> 404 (no books on wishlist)</td>
+        <td>201 (returns new book id)<br> 400 (bad user data)<br> 400 (book already exists)<br> 404 (user not found)</td>
+        <td>-</td>
+        <td>204 (OK, books deleted)<br> 404 (books not found)</td>
+      </tr>
+      <tr>
+        <td>/users/&lt;user_id&gt;/books/&lt;book_id&gt;</td>
+        <td>200 (OK, retrieved book)<br> 404 (resource not found)</td>
+        <td>-</td>
+        <td>200 (OK, updated book)<br> 400 (bad user data)<br> 404 (resource not found)</td>
+        <td>204 (OK, book deleted)<br> 404 (book not found)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

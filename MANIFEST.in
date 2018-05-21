@@ -1,0 +1,5 @@
+## Manifest.in
+
+include readerwishlist/schema.sql
+graft readerwishlist/static
+global-exclude *.pyc
